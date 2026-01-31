@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página de Divulgação</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: #111;
+      color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+
+    header nav a:hover {
+      color: #00c3ff;
+    }
+
+    /* Hero */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+
+    .hero h1, .hero p, .hero button {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .hero button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #fff;
+      color: #005bea;
+    }
+
+    .hero button:hover {
+      background: #eee;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 40px;
+      text-align: center;
+      background: #fff;
+    }
+
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    /* Serviços */
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #f2f2f2;
+      padding: 20px;
+      width: 250px;
+      border-radius: 8px;
+      transition: transform 0.3s;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    /* Contato */
+    .contato {
+      background: #f9f9f9;
+    }
+
+    form {
+      max-width: 400px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button.enviar {
+      background: #005bea;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Responsivo */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 30px;
+      }
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h2>Minha Empresa</h2>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Divulgue seu negócio com estilo</h1>
+    <p>Sites modernos, rápidos e profissionais para atrair mais clientes.</p>
+    <button onclick="scrollContato()">Fale Conosco</button>
+  </div>
+
+  <!-- Sobre -->
+  <section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>Somos especialistas em criação de sites e soluções digitais modernas.</p>
+    <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&q=80" alt="Sobre Nós" style="margin-top:30px; max-width:100%; border-radius:8px;">
+  </section>
+
+  <!-- Serviços -->
+  <section id="servicos">
+    <h2>Nossos Serviços</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Sites">
+        <h3>Sites</h3>
+        <p>Sites profissionais e responsivos.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1581091215360-1e2d29e8b67c?auto=format&fit=crop&w=400&q=80" alt="Sistemas">
+        <h3>Sistemas</h3>
+        <p>Aplicações web modernas.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1559028012-4816a1a8b5d1?auto=format&fit=crop&w=400&q=80" alt="Design">
+        <h3>Design</h3>
+        <p>Layouts bonitos e intuitivos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="contato">
+    <h2>Contato</h2>
+    <form onsubmit="enviarFormulario(event)">
+      <input type="text" placeholder="Seu nome" required />
+      <input type="email" placeholder="Seu email" required />
+      <textarea placeholder="Mensagem" required></textarea>
+      <button class="enviar" type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 - Minha Empresa</p>
+  </footer>
+
+  <script>
+    function scrollContato() {
+      document.getElementById("contato").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function enviarFormulario(event) {
+      event.preventDefault();
+      alert("Mensagem enviada com sucesso!");
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
