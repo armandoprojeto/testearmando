@@ -386,12 +386,9 @@
 
     /* Responsivo */
     @media (max-width: 900px) {
-      /* Mostra o botão hambúrguer */
       .menu-toggle {
         display: flex;
       }
-
-      /* Esconde o menu nav inicialmente */
       header nav {
         display: none;
         flex-direction: column;
@@ -405,41 +402,29 @@
         box-shadow: 0 8px 20px rgba(0,0,0,0.5);
         z-index: 105;
       }
-
-      /* Quando menu ativo, mostra nav */
       header nav.active {
         display: flex;
       }
-
-      /* Links do menu estilo mobile */
       header nav a {
         color: #00c3ff;
         font-weight: 600;
         font-size: 18px;
         margin-bottom: 12px;
       }
-
       header nav a:hover {
         color: #00e0ff;
       }
-
-      /* Ajusta header */
       header {
         flex-wrap: wrap;
         padding: 15px 20px;
       }
-
-      /* Ajusta largura das seções */
       section {
         padding: 50px 20px;
       }
-
-      /* Cards, valores e depoimentos ficam coluna */
       .cards, .valores-container, .depoimentos-container {
         flex-direction: column;
         align-items: center;
       }
-
       .card, .valor-item, .depoimento {
         width: 90%;
       }
@@ -454,18 +439,42 @@
       }
     }
 
-    /* Animação do botão hambúrguer aberto */
     .menu-toggle.active .bar:nth-child(1) {
       transform: rotate(45deg) translate(5px, 5px);
     }
-
     .menu-toggle.active .bar:nth-child(2) {
       opacity: 0;
     }
-
     .menu-toggle.active .bar:nth-child(3) {
       transform: rotate(-45deg) translate(5px, -5px);
     }
+
+    /* Botão flutuante WhatsApp */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 200;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+    }
+
+    .whatsapp-button:hover,
+    .whatsapp-button:focus {
+      background-color: #1ebe57;
+      box-shadow: 0 6px 18px rgba(30, 190, 87, 0.7);
+      outline: none;
+    }
+
   </style>
 </head>
 <body>
@@ -541,88 +550,86 @@
       <article class="card" role="listitem">
         <img src="https://images.unsplash.com/photo-1581091215360-1e2d29e8b67c?auto=format&fit=crop&w=400&q=80" alt="Sistemas modernos" loading="lazy" />
         <h3>Sistemas</h3>
-        <p>Aplicações web modernas e escaláveis para facilitar a gestão do seu negócio.</p>
+        <p>Criação de sistemas personalizados para automatizar processos e aumentar a eficiência.</p>
       </article>
       <article class="card" role="listitem">
-        <img src="https://images.unsplash.com/photo-1559028012-4816a1a8b5d1?auto=format&fit=crop&w=400&q=80" alt="Design intuitivo" loading="lazy" />
-        <h3>Design</h3>
-        <p>Criação de layouts bonitos, intuitivos e alinhados à identidade da sua marca.</p>
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=80" alt="Marketing digital" loading="lazy" />
+        <h3>Marketing Digital</h3>
+        <p>Estratégias de marketing digital que geram leads qualificados e crescimento real.</p>
       </article>
     </div>
   </section>
 
-  <!-- Por que nos escolher -->
-  <section id="por-que" aria-label="Diferenciais da empresa">
-    <h2>Por que escolher a gente?</h2>
-    <p class="por-que">
-      Nossos profissionais são altamente qualificados, utilizamos as tecnologias mais recentes e oferecemos suporte dedicado.  
-      Garantimos qualidade, prazo e preço justo para você ter a melhor experiência digital.
-    </p>
+  <!-- Por que escolher -->
+  <section id="por-que" aria-label="Por que escolher nossa empresa">
+    <h2>Por que nos escolher?</h2>
+    <div class="por-que">
+      Porque combinamos experiência, inovação e atendimento dedicado para transformar suas ideias em soluções digitais de impacto.  
+      Trabalhamos lado a lado com cada cliente, garantindo resultados reais e mensuráveis.
+    </div>
   </section>
 
   <!-- Depoimentos -->
   <section id="depoimentos" aria-label="Depoimentos de clientes">
     <h2>Depoimentos</h2>
     <div class="depoimentos-container" role="list">
-      <blockquote class="depoimento" role="listitem">
-        <p>O trabalho da Minha Empresa superou todas as nossas expectativas. Profissionais muito competentes e atenciosos!</p>
-        <footer class="depoimento-footer">— Maria Silva, CEO da TechStart</footer>
-      </blockquote>
-      <blockquote class="depoimento" role="listitem">
-        <p>O site ficou lindo e funcional. O suporte foi rápido e eficaz. Recomendo sem dúvidas!</p>
-        <footer class="depoimento-footer">— João Pedro, Empreendedor</footer>
-      </blockquote>
-      <blockquote class="depoimento" role="listitem">
-        <p>Excelente parceria e resultado final impecável. Nosso sistema ganhou muito em performance.</p>
-        <footer class="depoimento-footer">— Ana Beatriz, Diretora de Marketing</footer>
-      </blockquote>
+      <div class="depoimento" role="listitem">
+        <p>Excelente equipe! Transformaram nossas ideias em um site incrível e funcional.</p>
+        <div class="depoimento-footer">- João S.</div>
+      </div>
+      <div class="depoimento" role="listitem">
+        <p>Profissionalismo e criatividade de ponta. Recomendo a todos que buscam inovação.</p>
+        <div class="depoimento-footer">- Maria F.</div>
+      </div>
+      <div class="depoimento" role="listitem">
+        <p>Serviço ágil e de qualidade. Nossos processos melhoraram muito após a implementação do sistema.</p>
+        <div class="depoimento-footer">- Carlos P.</div>
+      </div>
     </div>
   </section>
 
   <!-- Contato -->
-  <section id="contato" aria-label="Formulário de contato">
-    <div class="contato">
-      <h2>Contato</h2>
-      <form>
-        <input type="text" name="nome" placeholder="Seu nome" required />
-        <input type="email" name="email" placeholder="Seu e-mail" required />
-        <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
-        <button class="enviar" type="submit">Enviar</button>
-      </form>
-    </div>
+  <section id="contato" class="contato" aria-label="Formulário de contato">
+    <h2>Contato</h2>
+    <form>
+      <input type="text" placeholder="Seu nome" required />
+      <input type="email" placeholder="Seu e-mail" required />
+      <textarea placeholder="Sua mensagem" rows="5" required></textarea>
+      <button class="enviar" type="submit">Enviar Mensagem</button>
+    </form>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2026 Minha Empresa - Todos os direitos reservados.</p>
-    <p>
-      <a href="#">Política de Privacidade</a> |
-      <a href="#">Termos de Uso</a>
-    </p>
+    &copy; 2026 Minha Empresa. Todos os direitos reservados.
+    <br />
+    <a href="#sobre">Sobre</a> | <a href="#servicos">Serviços</a> | <a href="#contato">Contato</a>
   </footer>
 
+  <!-- Botão flutuante WhatsApp -->
+  <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" aria-label="Entrar em contato pelo WhatsApp" class="whatsapp-button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#fff" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.52 3.48A11.825 11.825 0 0012 0C5.372 0 0 5.372 0 12c0 2.117.554 4.152 1.608 5.958L0 24l6.243-1.606a11.935 11.935 0 005.707 1.459c6.628 0 12-5.372 12-12 0-3.197-1.243-6.201-3.428-8.351zm-8.52 16.08a9.88 9.88 0 01-5.07-1.442l-.363-.22-3.7.953.986-3.604-.235-.374a9.87 9.87 0 01-1.506-5.54c0-5.458 4.438-9.896 9.897-9.896 2.64 0 5.118 1.031 6.972 2.888a9.788 9.788 0 012.884 6.98c0 5.458-4.438 9.896-9.897 9.896zm5.45-7.76c-.294-.147-1.735-.855-2-.952-.266-.098-.46-.147-.655.147s-.75.952-.92 1.147c-.17.196-.34.22-.633.074-.294-.147-1.24-.46-2.363-1.45-.875-.78-1.464-1.74-1.64-2.034-.17-.295-.018-.454.13-.6.134-.132.293-.344.44-.516.15-.17.2-.293.3-.488.098-.196.05-.37-.025-.516-.074-.147-.654-1.578-.896-2.17-.235-.57-.47-.494-.654-.505-.17-.01-.366-.012-.56-.012s-.516.074-.786.37c-.27.295-1.04 1.016-1.04 2.48 0 1.462 1.065 2.876 1.213 3.07.147.196 2.09 3.19 5.07 4.47.71.306 1.26.49 1.69.626.71.226 1.36.195 1.87.118.57-.084 1.735-.71 1.98-1.4.25-.69.25-1.28.175-1.4-.074-.122-.27-.196-.564-.34z"/>
+    </svg>
+  </a>
+
   <script>
+    // Menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('header nav');
 
     menuToggle.addEventListener('click', () => {
       nav.classList.toggle('active');
       menuToggle.classList.toggle('active');
-
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
       menuToggle.setAttribute('aria-expanded', !expanded);
     });
 
-    // Scroll suave para a seção contato ao clicar no botão do Hero
+    // Botão hero scroll
     function scrollContato() {
       document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
-      // Fecha o menu no celular ao clicar no botão
-      if(nav.classList.contains('active')){
-        nav.classList.remove('active');
-        menuToggle.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', false);
-      }
     }
   </script>
+
 </body>
 </html>
